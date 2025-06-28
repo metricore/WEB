@@ -32,8 +32,10 @@ const HomePage = () => {
 
   if (loading) {
     return (
-      <div className="min-h-screen flex items-center justify-center text-xl text-green-400">
-        <p>Cargando contenido desde WordPress...</p>
+      <div className="min-h-screen flex items-center justify-center text-center">
+        <h1 className="text-6xl md:text-8xl font-bold text-green-400 neon-glow">
+          Bienvenido a Metricore Labs
+        </h1>
       </div>
     );
   }
