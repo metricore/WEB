@@ -43,6 +43,7 @@ function App() {
           <Contact />
         </main>
         <Footer />
+        <WhatsAppButton />
         <Toaster />
       </div>
     </>
