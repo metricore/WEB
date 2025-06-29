@@ -56,12 +56,23 @@ const MiniGraph = ({ data, className }) => (
 );
 
 // Pulse indicator
-const PulseIndicator = ({ color = "green" }) => (
-  <div className="flex items-center space-x-2">
-    <div className={`w-2 h-2 bg-${color}-400 rounded-full animate-pulse`}></div>
-    <span className="text-xs text-gray-400">LIVE</span>
-  </div>
-);
+const PulseIndicator = ({ color = "green" }) => {
+  const colorClasses = {
+    green: "bg-green-400",
+    blue: "bg-blue-400",
+    purple: "bg-purple-400",
+    cyan: "bg-cyan-400",
+  };
+
+  return (
+    <div className="flex items-center space-x-2">
+      <div
+        className={`w-2 h-2 ${colorClasses[color]} rounded-full animate-pulse`}
+      ></div>
+      <span className="text-xs text-gray-400">LIVE</span>
+    </div>
+  );
+};
 
 // Tech icon components
 const icons = {
