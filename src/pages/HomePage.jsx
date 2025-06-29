@@ -32,17 +32,17 @@ const HomePage = () => {
   }, []);
 
   return (
-    <div className="min-h-screen flex items-center justify-center relative overflow-hidden">
+    <div className="min-h-screen flex items-center justify-center relative overflow-hidden px-4 sm:px-6">
       {/* Animated Network Background */}
       <NetworkBackground />
 
       {/* Background grid pattern */}
       <div className="absolute inset-0 tech-grid opacity-10"></div>
 
-      {/* Subtle glowing orbs */}
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-green-400/5 rounded-full blur-3xl floating-animation"></div>
+      {/* Subtle glowing orbs - responsive sizes */}
+      <div className="absolute top-1/4 left-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-green-400/5 rounded-full blur-3xl floating-animation"></div>
       <div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-400/5 rounded-full blur-3xl floating-animation"
+        className="absolute bottom-1/4 right-1/4 w-48 h-48 sm:w-72 sm:h-72 lg:w-96 lg:h-96 bg-blue-400/5 rounded-full blur-3xl floating-animation"
         style={{ animationDelay: "-3s" }}
       ></div>
 
@@ -55,10 +55,10 @@ const HomePage = () => {
           ease: [0.25, 0.46, 0.45, 0.94],
           staggerChildren: 0.1,
         }}
-        className="text-center z-10 relative"
+        className="text-center z-10 relative max-w-6xl mx-auto"
       >
         <motion.h1
-          className="text-7xl md:text-9xl lg:text-[12rem] font-black leading-none tracking-tight mb-8"
+          className="text-4xl xs:text-5xl sm:text-6xl md:text-8xl lg:text-9xl xl:text-[12rem] font-black leading-none tracking-tight mb-6 sm:mb-8"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.8 }}
@@ -66,14 +66,14 @@ const HomePage = () => {
           <span className="block bg-gradient-to-r from-green-400 via-blue-400 to-purple-400 bg-clip-text text-transparent animate-pulse">
             METRICORE
           </span>
-          <span className="block text-6xl md:text-8xl lg:text-9xl mt-4 text-white neon-glow tracking-widest">
+          <span className="block text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-8xl xl:text-9xl mt-2 sm:mt-4 text-white neon-glow tracking-widest">
             LABS
           </span>
         </motion.h1>
 
         {/* Subtitle */}
         <motion.p
-          className="text-xl md:text-2xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto"
+          className="text-lg sm:text-xl md:text-2xl text-gray-400 font-light tracking-wide max-w-2xl mx-auto px-4"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.8, duration: 0.6 }}
@@ -83,7 +83,7 @@ const HomePage = () => {
 
         {/* Glowing line */}
         <motion.div
-          className="w-24 h-1 bg-gradient-to-r from-green-400 to-blue-400 mx-auto mt-8 rounded-full"
+          className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-green-400 to-blue-400 mx-auto mt-6 sm:mt-8 rounded-full"
           initial={{ width: 0, opacity: 0 }}
           animate={{ width: 96, opacity: 1 }}
           transition={{ delay: 1.2, duration: 0.8 }}
