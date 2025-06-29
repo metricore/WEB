@@ -148,28 +148,37 @@ const MetricCard = ({
   graph,
   position,
   delay = 0,
-}) => (
-  <motion.div
-    className={`absolute ${position} bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-lg p-3 min-w-[140px]`}
-    initial={{ opacity: 0, scale: 0.8, y: 20 }}
-    animate={{ opacity: 1, scale: 1, y: 0 }}
-    transition={{ delay: delay + 1.5, duration: 0.6 }}
-  >
-    <div className="flex items-center justify-between mb-2">
-      <div className={`text-${color}-400`}>{icons[icon]}</div>
-      <PulseIndicator color={color} />
-    </div>
-    <div className="text-xs text-gray-400 mb-1">{title}</div>
-    <div className={`text-lg font-bold text-${color}-400`}>
-      <AnimatedCounter target={value} suffix={suffix} duration={2} />
-    </div>
-    {graph && (
-      <div className="mt-2">
-        <MiniGraph data={graph} className={`text-${color}-400`} />
+}) => {
+  const colorClasses = {
+    green: "text-green-400",
+    blue: "text-blue-400",
+    purple: "text-purple-400",
+    cyan: "text-cyan-400",
+  };
+
+  return (
+    <motion.div
+      className={`absolute ${position} bg-gray-900/80 backdrop-blur-sm border border-gray-800 rounded-lg p-3 min-w-[140px]`}
+      initial={{ opacity: 0, scale: 0.8, y: 20 }}
+      animate={{ opacity: 1, scale: 1, y: 0 }}
+      transition={{ delay: delay + 1.5, duration: 0.6 }}
+    >
+      <div className="flex items-center justify-between mb-2">
+        <div className={colorClasses[color]}>{icons[icon]}</div>
+        <PulseIndicator color={color} />
       </div>
-    )}
-  </motion.div>
-);
+      <div className="text-xs text-gray-400 mb-1">{title}</div>
+      <div className={`text-lg font-bold ${colorClasses[color]}`}>
+        <AnimatedCounter target={value} suffix={suffix} duration={2} />
+      </div>
+      {graph && (
+        <div className="mt-2">
+          <MiniGraph data={graph} className={colorClasses[color]} />
+        </div>
+      )}
+    </motion.div>
+  );
+};
 
 const TechMetrics = () => {
   const metrics = [
