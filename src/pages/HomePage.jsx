@@ -89,9 +89,6 @@ const HomePage = () => {
           transition={{ delay: 1.2, duration: 0.8 }}
         ></motion.div>
       </motion.div>
-
-      {/* Tech Metrics */}
-      <TechMetrics />
     </div>
   );
 };
