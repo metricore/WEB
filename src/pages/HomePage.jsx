@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { getPageBySlug } from "@/api/wordpress";
 import { motion } from "framer-motion";
+import TechMetrics from "@/components/ui/TechMetrics";
 
 const HomePage = () => {
   const [page, setPage] = useState(null);
